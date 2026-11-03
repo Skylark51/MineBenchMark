@@ -2,7 +2,13 @@ name: Validate compute runner
 on:
   push:
     branches: [main]
+    paths:
+      - 'runner/**'
+      - '.github/workflows/runner-tests.yml'
   pull_request:
+    paths:
+      - 'runner/**'
+      - '.github/workflows/runner-tests.yml'
 
 permissions:
   contents: read
