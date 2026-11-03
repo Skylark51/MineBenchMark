@@ -49,3 +49,12 @@ Success is correct scientific decision-making and reproducible provenance, not s
 ## Tool/compute boundary
 
 This GitHub-only demonstration documents simulated calculations. It does not connect to a compute cluster or execute Gaussian. Do not claim otherwise. Actual server submissions, expensive jobs, destructive file operations, or publication of confidential structures require an appropriately configured environment and authorization.
+
+## Compute-server handoff (version 0.1)
+
+- The Linux worker is defined in [runner/README.md](runner/README.md). Do not assume this chat has SSH access to the server.
+- For every request, create a new immutable jobs/requests/<job-id>.json; for real Gaussian jobs, also create the matching jobs/inputs/<job-id>.inp and calculate input_sha256.
+- The worker claims jobs before executing and writes machine-readable jobs/results/<job-id>.json and a runner-events/<job-id>.md receipt.
+- A worker receipt means an execution attempt was recorded, **not** that a reaction mechanism is validated. After receiving results, author a fresh scientific event documenting a separate critical assessment.
+- Initially use only the synthetic MB-SMOKE-001 test. Actual Gaussian requires authorized local config, verified structure, approval and site-compliant execution resources.
+- Treat output_path in a receipt as a path on the remote server; raw outputs are not accessible to the GitHub-based agent unless an additional file-transfer mechanism is configured.

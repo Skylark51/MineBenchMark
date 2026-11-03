@@ -41,3 +41,31 @@ The synthetic test compares 12-MTP and 14-MTP complexes with cyclohexanone and c
 6. Do not represent a test fixture as a Gaussian output, a verified TS, or a publishable energetic result.
 
 Future real jobs can reuse the same schema and gatekeeping, while keeping mock and actual results in separate datasets.
+
+## Compute-server connection
+
+The starter GitHub-to-server worker is under [runner/](runner/README.md). Its default configuration **does not run Gaussian**. The pre-created [MB-SMOKE-001](jobs/requests/MB-SMOKE-001.json) request verifies request retrieval, local execution, and result publication when a Linux host runs the worker.
+
+For a trusted Linux server:
+
+```bash
+git clone https://github.com/Skylark51/MineBenchMark.git
+cd MineBenchMark
+bash runner/install.sh
+python3 -m unittest discover -s runner/tests -v
+# Configure the private GitHub token; see runner/README.md.
+python3 runner/worker.py --once
+```
+
+The repository is public: do not upload confidential molecular structures or unreleased data. Read [runner/README.md](runner/README.md) before enabling real computation.
+
+### Queue paths
+
+- jobs/requests/: immutable computation requests
+- jobs/inputs/: corresponding Gaussian inputs for approved real jobs
+- jobs/claims/: immutable server claims preventing duplicate execution
+- jobs/results/: published machine-readable receipts
+- projects/<project-id>/runner-events/: server-side execution evidence
+- projects/<project-id>/events/: scientific analysis and decision records
+
+The runner collects outputs but does **not** act as an autonomous reasoning agent. A separate research agent/controller must read receipts, scientifically validate results and decide the next job.

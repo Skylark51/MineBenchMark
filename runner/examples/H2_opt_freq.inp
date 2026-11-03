@@ -1,0 +1,10 @@
+%CPU=0-3
+%mem=4GB
+#p B3LYP/def2SVP Opt Freq SCRF=(CPCM,Solvent=Acetonitrile) EmpiricalDispersion=GD3BJ
+
+MineBenchMark real Gaussian integration test H2 (not queued)
+
+0 1
+H      0.00000000  0.00000000  0.00000000
+H      0.00000000  0.00000000  0.74000000
+

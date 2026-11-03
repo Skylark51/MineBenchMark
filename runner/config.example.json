@@ -1,0 +1,14 @@
+{
+  "repository": "Skylark51/MineBenchMark",
+  "token_file": "~/.config/minebenchmark/token",
+  "work_dir": "~/.local/share/minebenchmark",
+  "poll_seconds": 60,
+  "allowed_projects": ["SIM-MN-001"],
+  "enable_real_gaussian": false,
+  "trusted_repo_writers_only": false,
+  "g16_profile": "/CHANGE/TO/YOUR/g16/bsd/g16.profile",
+  "g16_command": "g16",
+  "max_cpu_index": 15,
+  "max_memory_gb": 100,
+  "max_runtime_seconds": 21600
+}

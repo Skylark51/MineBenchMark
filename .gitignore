@@ -1,0 +1,16 @@
+# Do not commit secrets, server state, Gaussian scratch or raw quantum-chemistry outputs.
+.env
+*.token
+token
+*.chk
+*.rwf
+*.scr
+*.out
+*.log
+*.fchk
+*.wfn
+*.wfx
+__pycache__/
+*.pyc
+.venv/
+.server-state/
