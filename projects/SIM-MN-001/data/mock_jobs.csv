@@ -1,0 +1,7 @@
+job_id,case_id,task,mode,status,validation_result,related_event,real_output_path
+SIM-J001,12-CHN,simulate_direct_path,synthetic,finished,simulated_pass,0003,NA
+SIM-J002,14-CHN,simulate_first_step,synthetic,finished,simulated_pass,0003,NA
+SIM-J003,14-CHN,simulate_ts_oi_candidate_v1,synthetic,failed,irc_same_endpoint,0004,NA
+SIM-J004,14-CHN,simulate_alternative_scan_and_ts_v2,synthetic,finished,simulated_pass,0005,NA
+SIM-J005,12-CBN,simulate_direct_path,synthetic,finished,simulated_pass,0003,NA
+SIM-J006,14-CBN,simulate_stepwise_path,synthetic,finished,simulated_pass,0003,NA
